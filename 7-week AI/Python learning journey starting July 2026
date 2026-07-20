@@ -5,12 +5,21 @@ Week 1 Goal: Kaggle Learn Python修了、Python実装課題1完了
     学んだこと：Syntax, Varibles, Define関数, Help関数, Bool/Intの組み合わせ、Ketchup/Mustard/Onion
     明日やること：Lesson4~6, Define関数の復習(Lesson2), Bool/Intの復習(Lesson3)
   Day 2: 完了項目、学んだこと、明日やること
-    完了項目
-    学んだこと
-    明日やること
+    完了項目: Lesson4 「List」, Lesson5「Loops and List Comprehensions」
+    学んだこと: 
+      Lesson4: List/Tuplesのorder関連
+      Lesson5: LoopsとListの使い方、コードは短い方が良いが意味がわかりやすいことも大事
+    明日やること: Lesson4 exerciseの最後のquiz難しい　Lesson1~5復習!!!!
   Day 3: 完了項目、学んだこと、明日やること
-    完了項目
+    完了項目: Lesson5 Exerciseの残り、Lesson1~5復習
     学んだこと
+      Lesson1
+        a=temp, a=b, b=temp
+        Candy 割り切れないのやつ
+      Lesson2
+        なぜreturnが必要か（なぜ　round(X.2）だけではNGか）
+        少しずつDefinitionのセンスを理解できてる感じ
+      Lesson3 Working
     明日やること
   Day 4: 完了項目、学んだこと、明日やること
     完了項目
