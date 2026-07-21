@@ -11,29 +11,49 @@ Week 1 Goal: Kaggle Learn Python修了、Python実装課題1完了
       Lesson5: LoopsとListの使い方、コードは短い方が良いが意味がわかりやすいことも大事
     明日やること: Lesson4 exerciseの最後のquiz難しい　Lesson1~5復習!!!!
   Day 3: 完了項目、学んだこと、明日やること
-    完了項目: Lesson5 Exerciseの残り、Lesson1~5復習
+    完了項目: Lesson5 Exerciseの残り、Lesson1~3復習
     学んだこと
       Lesson1
         a=temp, a=b, b=temp
         Candy 割り切れないのやつ
       Lesson2
         なぜreturnが必要か（なぜ　round(X.2）だけではNGか）
-        少しずつDefinitionのセンスを理解できてる感じ
-      Lesson3 Working
+        少しずつDefinitionの意味とかPythonのセンスを理解できてる感じ
+      Lesson3
+        雨降りで、傘持ってて、Operating dayで、、みたいな組み合わせのやつ
+        Returnは数字を保持するが、Printは映すだけ(後の計算で利用できるか、できないか)
     明日やること
+      復習：Lesson4,5
+      読む：https://en.wikipedia.org/wiki/Pure_function%EF%BC%88Wikipedia%E3%81%AE%E8%8B%B1%E8%AA%9E%E7%89%88%E3%81%A7%E5%8D%81%E5%88%86%EF%BC%89　->純粋関数の概念理解
   Day 4: 完了項目、学んだこと、明日やること
-    完了項目
+    完了項目：Lesson
     学んだこと
-    明日やること
+      Lesson4
+        DefでListを定義~Listのdataを定義~Return:Listの何番目を返す
+        Who is fashionably late?
+          def fashionably_late(arrivals, name)の場合、arrivals=変数/name=引数
+          print(fashionably_late(arrivals, 'Mona'))のように、引数レベルで指定する必要あり
+      Lesson5
+        num in nums: indentの重要性：listのデータ中身とprintはdefと同じ階層に置く
+      純粋関数(wiki)
+        純粋関数とは：返り値や同値の式で置き換えてもプログラムの意味が変わらない
+          =を使ったリストデータの置き換えや、a=b,a=Temp,b=Tempみたいなのが例かな
+        利点の一つ：引数と返り値の対応を直接検証でき、外部状態の初期化や変更を前提にしなくてよいため、テスト自動化 による単体テストを書きやすい->なんとなく扱いやすそうなの伝わった
+    明日やること：Lesson6,7
+    詰まった点・疑問：= 学んだこと
   Day 5: 完了項目、学んだこと、明日やること
     完了項目
     学んだこと
     明日やること
+    詰まった点・疑問
   Day 6: 完了項目、学んだこと、明日やること
     完了項目
     学んだこと
     明日やること
+    詰まった点・疑問
   Day 7: 完了項目、学んだこと、明日やること
     完了項目
     学んだこと
     明日やること
+    詰まった点・疑問
+    詰まった点・疑問
