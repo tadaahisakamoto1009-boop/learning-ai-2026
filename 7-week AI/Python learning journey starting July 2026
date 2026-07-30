@@ -39,21 +39,94 @@ Week 1 Goal: Kaggle Learn Python修了、Python実装課題1完了
         純粋関数とは：返り値や同値の式で置き換えてもプログラムの意味が変わらない
           =を使ったリストデータの置き換えや、a=b,a=Temp,b=Tempみたいなのが例かな
         利点の一つ：引数と返り値の対応を直接検証でき、外部状態の初期化や変更を前提にしなくてよいため、テスト自動化 による単体テストを書きやすい->なんとなく扱いやすそうなの伝わった
-    明日やること：Lesson6,7
+    明日やること：Lesson6
     詰まった点・疑問：= 学んだこと
   Day 5: 完了項目、学んだこと、明日やること
-    完了項目
+    完了項目: Lesson6(Exerciseは未完了)
     学んだこと
-    明日やること
-    詰まった点・疑問
-  Day 6: 完了項目、学んだこと、明日やること
-    完了項目
+      Lesson6 "Strings and Dictionaries"
+        Strings can be thought of as sequences of characters. Almost everything we've seen that we can do to a list, we can also do to a string.
+        planet[0] = 'B'みたいな文字列置き換えは不可
+        datestr: 画像の2行目のコード year, month, day = datestr.split('-') が定義していないように見えるのに日付をバラバラに分解できている理由は、1行目のコードで datestr という変数に 1956-01-31 という文字列をあらかじめ覚えさせて（定義して）あるからです。
+        planet + ", you'll always be the " + str(position) + "th planet to me." -> str(position)という使い方が純粋関数っぽい
+        dictionary機能：{planet: planet[0] for planet in planets}
+    明日やること: Lesson6 exercise, Lesson7
+    詰まった点・疑問: Intendの位置間違い、文字タイプ(数字、文字列、、)間違い
+  Day 6: 学習なし
+  Day 7: 学習なし
+  Day 8: 完了項目、学んだこと、明日やること
+    完了項目: Lesson6 exercise, Lesson7 (exercise残り)
     学んだこと
-    明日やること
-    詰まった点・疑問
-  Day 7: 完了項目、学んだこと、明日やること
-    完了項目
-    学んだこと
-    明日やること
-    詰まった点・疑問
-    詰まった点・疑問
+      Lesson6 Excercise
+        郵便番号判定: データ加工で重要なテクニックになりそう
+          return len(str(zip_code)) == 5 -> Zip Codeが1234Xのようなエラーデータを弾けない
+          return len(str(zip_code)) == 5 and str(zip_code).isdigit() -> "isdigit"で数値かどうか判定しエラーデータを弾く
+        重複単語を見つける：これは検索の仕組みな気がする
+          コードの書き方：words = doc.replace('.', '').replace(',', '').lower().split()　みたいに.で関数を続けて書く
+          indices = [] が必要な理由は、見つかった「番号（インデックス）」を後から追加して、最後にまとめて判定システムに返すための「箱（入れ物）」が必要だからです。
+            複数の結果をまとめて返せないもし箱を作らず、見つかった瞬間に return i としてしまうと、1つ目が見つかった時点で関数が終了してしまいます。-> loopの考え方
+      Lesson7
+        import(math)
+        やってはいけない書き方: log 関数の上に、数学の math.log（対数計算）が上書きされる
+          # 1. 自分で作った「記録（ログ）を残す」関数
+            def log(message):
+            print(f"[LOG]: {message}")
+          # 2. ここで math からすべてをインポートする
+            from math import *
+          # 3. 自分の関数を使おうとしたら…？
+            log("お昼ご飯を食べました")
+          実行結果->TypeError: must be real number, not str （文字列ではなく数値を入力してください
+          正しくは次のように書く："math."を併記
+            import math
+            print(math.pi)
+            print(math.log(32, 2))
+        NumPyの「配列（Array：アレイ）」データを、Python標準の「リスト（List）」データに変換
+          rolls_list = rolls.tolist()
+          なんで必要？：NumPyの配列（rolls）は計算が速いが、Pythonの標準的な機能(データの追加（append）やWebへの出力)に不向き。
+        When does 1 + 1 not equal 2?
+  Day 9: 学習なし
+  Day 10
+    完了項目：Lesson7 exercise
+    学んだこと：
+      Graph関数
+        graph.set_ylim(), graph.set_ylabel()など
+    明日やること：
+    詰まった点・疑問：
+        Lesseon7 exercise Q2,3難しいのでしっかり復習必要
+        Graph関数は一次関数・二次関数のグラフもかけるのかな？ -> Yes, 以下を組み合わせてグラフ作成
+          np.linspace(-5, 5, 100)
+            -5 から 5 までの間を 100 個の点に細かく区切ったデータの塊（NumPy配列）を作ります。
+            点と点を直線で滑らかに繋ぐことで、綺麗な曲線（放物線）を描くために必須の関数です。
+          plt.plot(x, y)
+            グラフを描画する中心的な関数です。第一引数に x、第二引数に y のデータを渡します。
+          x**2
+            Pythonで二乗（\(x^{2}\)）を表現するときは、アスタリスクを2つ重ねて書きます。
+        二つの座標を通る関数とかも求められる？ -> Yes, 以下で問題とく~必要あればplt.plot()でグラフ表示
+          sympy, sp.solve関数
+  Day 11
+    完了項目：Lesson1~4復習
+    学んだこと：
+      Lesson1,2: 身についていたのでさらっとExcercise復習
+      Lesson3
+        Blackjack: 条件分岐が複雑。勝率を上げるために関数のアレンジは無限に可能。
+      Lesson4
+        Pythonでは0=Listの1つめ、-1=Listの最後
+        Fashionably late: %や!などあまり使用しないFunctionの意味を忘れていた
+    明日やること：Lesson5~7復習
+    詰まった点・疑問：= 学んだこと
+  Day 12
+    完了項目：Lesson5~6復習
+    学んだこと：
+      Lesson5
+        Listデータの大小判定をループさせる
+      Lesson6
+        郵便番号の判定：return len(zip_code) == 5 and zip_code.isdigit()：5桁＆全部数字
+  明日やること：Lesson7復習
+    詰まった点・疑問：= 学んだこと
+  Day 13
+    完了項目：Lesson7復習
+    学んだこと：
+      Lesson7
+        Graph関数
+  明日やること：
+    詰まった点・疑問：= 学んだこと
