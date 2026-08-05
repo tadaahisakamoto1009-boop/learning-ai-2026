@@ -198,7 +198,12 @@ Answer:
 				Series：1次元のデータ（縦の「1列」だけ、または横の「1行」だけ）
 				DataFrame：2次元のデータ（縦と横がある「表」全体）
 				Excelに例えると、Seriesが集まってできた「シート全体」がDataFrameになります。
-	明日やること：
+		Lesson2
+			reviews.iloc[[0, 1, 2], 0]のように細かく参照セル指定できるのはわかったが、どのようなケースで使用するのか？
+			reviews.iloc[-5:]：データ最後から5行参照、のようにPythonのマイナスの概念は面白い
+			reviews.country == 'Italy'：Country列の値を全部ItalyにReplaceする、ことは可能？
+			reviews.loc[(reviews.country == 'Italy') & (reviews.points >= 90)]：Excelのフィルタ機能近似
+	明日やること：Lesson3
     詰まった点・疑問：
 		現状、Excelを使えばよくない？と思う->大規模データセットの場合、処理スピードに差が生じるのだろう
 		Excelで使える関数は全てPythonでも同じ機能があるのか？ピボットテーブルは？->Excelの関数・ピボットテーブルと同じ（またはそれ以上）の機能がPython（pandas）に存在。
