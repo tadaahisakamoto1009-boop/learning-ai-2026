@@ -166,4 +166,64 @@ Answer:
 	だから for _ in range(n-1) と書く
 	重要な観察：ループには「何回繰り返すか」と「何回目かを使うか」の2種類がある
 
-20260804
+20260804: No Study
+
+20260805
+	完了項目：Kaggle Learn Pandas Lesson 1
+    学んだこと：
+		Pandas Lesson 1着手前の3つの要点
+			要点1：Pandasとは「表形式データを扱う道具」
+				Excelの表を、Pythonのコードで操作できるようにするライブラリです。
+					Excel：マウスでセルをクリックして操作
+					Pandas：コードで表を操作
+				なぜPandasが重要か：
+					Excelは10万行を超えると重くなる、Pandasは数百万行を扱える
+					コードで書けば自動化・再現性がある
+					あなたの過去の関西ペイント時代の予算管理（700製品×10拠点）は、実はPandas向けの典型的な作業
+			要点2：2つの中核概念「DataFrame」と「Series」
+				Lesson 1で最初に出てくるこの2つを、以下のイメージで捉えると理解が速い：
+					DataFrame（データフレーム）：Excelの1枚のシート全体
+					Series（シリーズ）：Excelの1列だけ
+			要点3：Pandasの「読み方」
+				Lesson 1で頻出する記法：
+					pd.DataFrame(...) — DataFrameを作る
+					pd.Series(...) — Seriesを作る
+					pd.read_csv('file.csv') — CSVファイルをDataFrameとして読む
+					df.to_csv('file.csv') — DataFrameをCSVとして保存
+					pdはPandasの慣習的な省略形（Lesson 1の冒頭にimport pandas as pdと出てくる）。	
+		Pandas Lesson 1
+			pd.DataFrame
+				数字が縦/横に入るのか確認忘れずに
+			DataFrameとSeries関数の違い
+				Series：1次元のデータ（縦の「1列」だけ、または横の「1行」だけ）
+				DataFrame：2次元のデータ（縦と横がある「表」全体）
+				Excelに例えると、Seriesが集まってできた「シート全体」がDataFrameになります。
+	明日やること：
+    詰まった点・疑問：
+		現状、Excelを使えばよくない？と思う->大規模データセットの場合、処理スピードに差が生じるのだろう
+		Excelで使える関数は全てPythonでも同じ機能があるのか？ピボットテーブルは？->Excelの関数・ピボットテーブルと同じ（またはそれ以上）の機能がPython（pandas）に存在。
+		
+20260806
+	完了項目：
+    学んだこと：
+	明日やること：
+    詰まった点・疑問：
+
+20260807
+	完了項目：
+    学んだこと：
+	明日やること：
+    詰まった点・疑問：
+
+20260808
+	完了項目：
+    学んだこと：
+	明日やること：
+    詰まった点・疑問：
+
+20260809
+	完了項目：
+    学んだこと：
+	明日やること：
+    詰まった点・疑問：
+	★Pandasの実装課題での使いどころ
