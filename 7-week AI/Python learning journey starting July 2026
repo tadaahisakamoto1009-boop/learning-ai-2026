@@ -169,7 +169,7 @@ Answer:
 20260804: No Study
 
 20260805
-	完了項目：Kaggle Learn Pandas Lesson 1
+	完了項目：Kaggle Learn Pandas Lesson1, Lesson2
     学んだこと：
 		Pandas Lesson 1着手前の3つの要点
 			要点1：Pandasとは「表形式データを扱う道具」
@@ -209,10 +209,14 @@ Answer:
 		Excelで使える関数は全てPythonでも同じ機能があるのか？ピボットテーブルは？->Excelの関数・ピボットテーブルと同じ（またはそれ以上）の機能がPython（pandas）に存在。
 		
 20260806
-	完了項目：
+	完了項目：Lesson3
     学んだこと：
-	明日やること：
-    詰まった点・疑問：
+		Lesson3
+			Reviews関数使いやすそう：reviews.points.describe(), reviews.points.mean()
+			reviews.points.map(lambda p: p - review_points_mean): Meanからの差を計算
+			reviews.country + " - " + reviews.region_1: ハイフンで二つの要素をつなぐ
+	明日やること：Lesson4
+    詰まった点・疑問：特になし
 
 20260807
 	完了項目：
