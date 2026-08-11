@@ -249,15 +249,48 @@ Answer:
 			「今期の売上予算を、過去3年の実績から自動生成して」→AIが叩き台を作る
 			「地域別売上のシナリオ分析、AIが3パターン提示」
 			「異常な予算入力を、AIがリアルタイムで検知」
+
 20260808
+	完了項目：Lesson5
+    学んだこと：
+		Lesson6
+			reviews.points.astype('float64')：整数から小数点を含む数値に変換
+			reviews[pd.isnull(reviews.country)]：Country列がnullのものを表示
+			reviews.region_2.fillna("Unknown")：region2列が空欄のデータに"Unknown"を入力
+			reviews.taster_twitter_handle.replace("@kerinokeefe", "@kerino")：kerinokeefe->kerino置き換え
+	明日やること：Lesson6
+    詰まった点・疑問：replaceで置き換えしたデータは永久に値が変わる(==)? or 一時的に変わる?
+
+20260809 & 0810 : No Progress, worked on vibe coding
+	Developed this: https://claude.ai/chat/2495c91e-3758-41a0-a407-4ae6f3541867
+	AI Intelligence Digest
+
+20260811
+	完了項目：Lesson6
+    学んだこと：
+		Lesson6
+			reviews.rename(columns={'points': 'score'}): Rename column
+			reviews.rename_axis("wines", axis='rows').rename_axis("fields", axis='columns')
+				実行すると、表の左上の見出し部分にWines, Fieldsが追加される
+				実務では、表をグラフ化（可視化）するときに、軸のラベルに自動でこの名前が表示されるようになるため、図をきれいに整えたいときによく使われるテクニック。
+			left.join(right, lsuffix='_CAN', rsuffix='_UK')
+				Vlookupで2つのシートの情報を合体させるイメージ
+				Suffixを付けることで、元々同じ名前のColumnsを区別している
+	明日やること：後ほど確認
+    詰まった点・疑問：Pandas全体を通して、比較的理解しやすかった。AnaplanやSACで多次元データやアナリティクスに触れていたからかな。
+	★Pandasの実装課題での使いどころ
+		営業や製造の現場よりも、マーケティングや経営など本社よりの立場でデータ分析～戦略立案に使えそうな印象。
+		ただし、現場部門はデータを解像度高く理解しているが、本社部門はただのテキストに見えている、みたいなGapが発生するのでは、という懸念。
+		おそらくこの懸念は様々なツールに言えるのでは、従来のERPや新技術のAIツールでも関係なく、ツールをうまく使える組織を作ることが重要と思う。
+
+20260812
 	完了項目：
     学んだこと：
 	明日やること：
     詰まった点・疑問：
 
-20260809
+20260813
 	完了項目：
     学んだこと：
 	明日やること：
-    詰まった点・疑問：
-	★Pandasの実装課題での使いどころ
+    詰まった点・疑問：	
