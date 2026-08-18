@@ -290,6 +290,7 @@ Answer:
 ■ 実装（Vibe Coding）
   プロダクト：AI Intelligence Digest / Payment Analytics Tool
   今日の作業：
+	Digest更新
 	Startup research: Neura Robotics, Apptronik: 前回のVoliroと近似のPhysical AI企業
 		Score: Apptronik>Voliro>Neura -> 想定と異なる分析結果で面白い発見。調達金額だけでは企業の実力を測れない。
 		Apptronik: 「AIは借りてハードに集中」する設計が、ハード基準では効率的
@@ -311,16 +312,18 @@ Answer:
   面接での使いどころ：
 
 ■ 明日の予定
-  実装：
+  実装：AI Inteligence Digest継続運用
   学習：
 
 20260814
 ■ 実装（Vibe Coding）
   プロダクト：AI Intelligence Digest / Payment Analytics Tool
-  今日の作業：
+  今日の作業：Digest更新
   実装した機能：
-  詰まった点：
-  次のステップ：
+	Schedule機能：Update daily digest
+		改善内容：回答を日本語で返す、最新のmdファイルをチャットに反映する
+  詰まった点：特になし
+  次のステップ：Daily digest継続運用 + Startup research
 
 ■ 学習（トリガー型：実装で必要になった技術）
   今日の学習：
@@ -339,6 +342,121 @@ Answer:
 20260815
 ■ 実装（Vibe Coding）
   プロダクト：AI Intelligence Digest / Payment Analytics Tool
+  今日の作業：Digest更新
+  実装した機能：*完了したらチェックする
+	Startup Registryを CSV エクスポート
+		CSVに含めたい列を決める（例：Company, Domain, Investment Score, Verdict, First Mentioned, Last Mentioned）
+		出力形式を決める（Colab で pd.DataFrame → to_csv、または Dashboard artifact に download button）
+		ファイル名の規則を決める（例：startup_registry_YYYYMMDD.csv）
+		Claude Project との対話で実装
+		テスト
+		Registry に反映
+  詰まった点：
+  次のステップ：
+	CSV利用：Startup Registryを CSV エクスポート->過去のDigest履歴を CSV エクスポート->(外部データを CSV で取り込み)
+
+■ 学習（トリガー型：実装で必要になった技術）
+  今日の学習：
+  学んだこと：
+  実装との関連：
+
+■ 学習（体系型：Karp/AI業界動向/API調査）
+  読書・調査：
+  学んだこと：
+	最近AIモデル各社のセキュリティ・レギュレーションに関するニュースが多い。
+	いままではモデルのかしこさや料金が競争力になっていたが、今後セキュリティは新たな判断材料になり得ると思う。
+  面接での使いどころ：
+
+■ 明日の予定
+  実装：
+  学習：
+
+20260816
+■ 実装（Vibe Coding）
+  プロダクト：AI Intelligence Digest / Payment Analytics Tool
+  今日の作業：Daily update継続運用
+  実装した機能：
+  詰まった点：
+  次のステップ：
+
+■ 学習（トリガー型：実装で必要になった技術）
+  今日の学習：
+  学んだこと：
+  実装との関連：
+
+■ 学習（体系型：Karp/AI業界動向/API調査）
+  読書・調査：
+  学んだこと：
+  面接での使いどころ：
+
+■ 明日の予定
+  実装：
+  学習：
+
+20260817
+■ 実装（Vibe Coding）
+  プロダクト：AI Intelligence Digest / Payment Analytics Tool
+  今日の作業：Daily Update継続運用
+  実装した機能：
+	リリース日時が古いニュースが多い->直近三日間のニュースを優先してピックすることは可能か?	->以下修正
+		recency をスコアではなく「Selection Preference」として state に記録し、私が毎セッション取得段で honor する。
+		既定案：優先窓 ≤ 3日。ただし良質候補が5本に満たない日は 7日まで自動拡張（静かな日に弱いニュースで枠を埋めない）。
+		各アイテムに publish date を必ず明示して、鮮度を可視化。
+		Breakthrough Spotlight 枠だけは例外（重要な技術breakthroughは4〜5日遅れて理解されることがあるため、窓を緩める）。
+	Context: 6% of project capacity used->これは毎日のDigest Updateの度にデータ使用が増えると理解、最終的には100%になり、更新できなくなるのでは?解決策はあるか?
+		毎日KBに積んでいる daily-report-ja と、置換せず版番号で足していく state が原因。
+		このままだと 約100KB/日 → 5.5MBまで概ね50日で詰む。ただし回避可能。
+		解決策：KBの残っている過去バージョンのIntelligence stateや過去日付のDaily Digestを消す
+		対応：いまは削除しない、将来的に改善の証跡として確認する可能性があるから。
+	CSV利用：Startup Registryを CSV エクスポート
+  詰まった点：
+  次のステップ：
+
+■ 学習（トリガー型：実装で必要になった技術）
+  今日の学習：Claude Projectの構造, CSV利用：Startup Registryを CSV エクスポート
+  学んだこと：
+		裏でのデータの持ち方はいろんな実装に関わる：ツールの構造、API、CSV取得手段
+		CSVエクスポートでは文字コードの検討も必要
+  実装との関連：現行のAI Intelligence Digestではデータ容量問題が顕在化していないが、大規模データやより複雑な要件を持つ場合、プロジェクト設計思想から工夫が必要と思われる。
+
+■ 学習（体系型：Karp/AI業界動向/API調査）
+  読書・調査：
+  学んだこと：
+  面接での使いどころ：
+
+■ 明日の予定
+  実装：
+  学習：
+
+20260818
+■ 実装（Vibe Coding）
+  プロダクト：AI Intelligence Digest / Payment Analytics Tool
+  今日の作業：
+	0618改善内容の確認
+		ピックされるニュースは新しいものが増えた
+		csv export: オンデマンドのチャット起動で運用する実装とした。export file問題なし。
+  実装した機能：
+  詰まった点：
+  次のステップ：Github投稿(Readme記載など含めて)
+
+■ 学習（トリガー型：実装で必要になった技術）
+  今日の学習：
+  学んだこと：
+  実装との関連：
+
+■ 学習（体系型：Karp/AI業界動向/API調査）
+  読書・調査：
+	technological republic: 240/308ページ
+  学んだこと：
+  面接での使いどころ：
+
+■ 明日の予定
+  実装：
+  学習：
+
+20260819
+■ 実装（Vibe Coding）
+  プロダクト：AI Intelligence Digest / Payment Analytics Tool
   今日の作業：
   実装した機能：
   詰まった点：
@@ -358,7 +476,7 @@ Answer:
   実装：
   学習：
 
-20260816
+20260820
 ■ 実装（Vibe Coding）
   プロダクト：AI Intelligence Digest / Payment Analytics Tool
   今日の作業：
